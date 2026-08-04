@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz Generator</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container1">
+        <div class="second">
+            <h2>AI Quiz Generator</h2>
+        </div>
+        <div class="second2">
+            <input id="topic" type="text" placeholder="Enter a topic...">
+        </div>
+        <div class="second3">
+            <button id="startQuizButton">Generate Quiz</button>
+        </div>
+        <div id="quiz" style="margin-top:50px;"></div> 
+    </div>
+<script>
+    const user = localStorage.getItem("loggedIn");
+
+    if (!user) {
+        window.location.href = "login.html";
+    }
+
+    document.getElementById("username").innerText = user;
+
+    function logout() {
+        localStorage.removeItem("loggedIn");
+        window.location.href = "login.html";
+    }
+</script>
+    <script type="module" src="quizScript.js"></script>
+</body>
+</html>
+
